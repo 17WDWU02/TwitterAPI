@@ -27,3 +27,40 @@ $("#form").submit(function(event){
 	})
 
 });
+
+$("#SendTweet").submit(function(event){
+	event.preventDefault();
+	var url = "http://localhost:3000";
+	var value = $("#TwitterMessage").val();
+	if(value.length == 0){
+		alert("Please enter a value");
+		return;
+	} else if(value.length > 140){
+		alert("Must be less than 140 characters");
+		return;
+	} else {
+		url += "/send=" + value;
+	}
+	$.ajax({
+		url: url,
+		dataType: "json",
+		type: "post",
+		success:function(){
+			$("#result").text("Your Tweet: " + value + " -  has been sent");
+		},
+		error:function(){
+			console.log("error");
+		}
+	})
+})
+
+
+
+
+
+
+
+
+
+
+

@@ -47,6 +47,28 @@ app.get("/trends", function(request, response){
 	});
 });
 
+app.post("/send=:message", function(request, response){
+	var message = request.params.message;
+	var params = {status:message};
+	T.post('statuses/update', params, function(error, tweet, twitterResponse){
+		if(!error){
+			response.json(tweet);
+		} else {
+			console.log(error);
+		}
+	});
+});
+
 app.listen(3000);
 
 console.log("Server running on port 3000");
+
+
+
+
+
+
+
+
+
+
