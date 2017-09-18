@@ -24,7 +24,7 @@ $("#form").submit(function(event){
 		error: function(){
 			console.log("error");
 		}
-	})
+	});
 
 });
 
@@ -51,8 +51,8 @@ $("#SendTweet").submit(function(event){
 		error:function(){
 			console.log("error");
 		}
-	})
-})
+	});
+});
 
 
 

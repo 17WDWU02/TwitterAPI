@@ -1,0 +1,10 @@
+$margin: 20px;
+$color: red;
+$fontColor: green;
+
+body{
+	color: $fontColor;
+	background-color: $color;
+	margin: $margin;
+	padding:10px
+}

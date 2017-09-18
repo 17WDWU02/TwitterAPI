@@ -1,6 +1,6 @@
 var express = require('express');
 var cors = require('cors');
-var Twit = require('twit')
+var Twit = require('twit');
 var config = require('./config');
 var path = require('path');
 var app = express();
